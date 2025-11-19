@@ -17,6 +17,7 @@
             rpy:='0 0 0'
             hand:='false'
             ee_type:=''
+            has_head
             ros2_control:=false
             use_fake_hardware:=false
             fake_sensor_commands:=false
@@ -25,7 +26,7 @@
             body_prefix:=''
             arm_connected_to='base'
             body_connected_to='world'
-            bimanual:=false
+            bimanual
             right_arm_base_xyz='0 0 0'
             left_arm_base_xyz='0 0 0'
             right_arm_base_rpy='0 0 0'
@@ -103,7 +104,8 @@
             fake_sensor_commands="${fake_sensor_commands}"
             left_arm_prefix="${left_arm_prefix}"
             right_arm_prefix="${right_arm_prefix}"
-            hand="${hand}"/>
+            hand="${hand}"
+            has_head="${has_head}"/>
         </xacro:if>
 
         <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">

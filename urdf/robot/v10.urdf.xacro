@@ -9,6 +9,8 @@
 
   <xacro:arg name="ee_type" default="openarm_hand" />
 
+  <xacro:arg name="has_head" default="false" />
+
   <xacro:arg name="no_prefix" default="false"/>
 
   <xacro:arg name="hand" default="true" />
@@ -33,7 +35,7 @@
 
   <xacro:arg name="fake_sensor_commands" default="false" />
 
-  <xacro:arg name="bimanual" default="false" />
+  <xacro:arg name="bimanual" default="true" />
 
   <xacro:arg name="right_arm_base_xyz" default="0.0 -0.031 0.698" />
   <xacro:arg name="right_arm_base_rpy" default="1.5708 0 0" />
@@ -57,6 +59,7 @@
   ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/kinematics_link.yaml')}"
   hand="$(arg hand)"
   ee_type="$(arg ee_type)"
+  has_head="$(arg has_head)"
   ros2_control="$(arg ros2_control)"
   left_arm_prefix="$(arg left_arm_prefix)"
   right_arm_prefix="$(arg right_arm_prefix)"
