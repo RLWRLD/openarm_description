@@ -3,7 +3,6 @@
 
 <xacro:macro name="openarm_arm_ros2_control"
          params="arm_type
-             can_interface
              use_fake_hardware:=^|false
              fake_sensor_commands:=^|false
              hand:=^|false
@@ -23,7 +22,6 @@
           </xacro:if>
           <xacro:if value="${use_fake_hardware == 0}">
             <plugin>openarm_hardware/OpenArm_${arm_type}HW</plugin>
-            <param name="can_interface">${can_interface}</param>
             <param name="arm_prefix">${arm_prefix}</param>
             <param name="hand">${hand}</param>
             <param name="can_fd">${can_fd}</param>
