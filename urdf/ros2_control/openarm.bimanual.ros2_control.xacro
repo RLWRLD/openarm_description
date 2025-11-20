@@ -3,6 +3,8 @@
 
 <xacro:macro name="openarm_bimanual_ros2_control"
          params="arm_type
+             left_can_interface:=^|can1
+             right_can_interface:=^|can0
              use_fake_hardware:=^|false
              fake_sensor_commands:=^|false
              hand:=^|false
@@ -22,6 +24,7 @@
           </xacro:if>
           <xacro:unless value="${use_fake_hardware}">
             <plugin>openarm_hardware/OpenArm_v10HW</plugin>
+            <param name="can_interface">${left_can_interface}</param>
             <param name="arm_prefix">${left_arm_prefix}</param>
             <param name="hand">${hand}</param>
             <param name="can_fd">${can_fd}</param>
@@ -72,6 +75,7 @@
           </xacro:if>
           <xacro:unless value="${use_fake_hardware}">
             <plugin>openarm_hardware/OpenArm_v10HW</plugin>
+            <param name="can_interface">${right_can_interface}</param>
             <param name="arm_prefix">${right_arm_prefix}</param>
             <param name="hand">${hand}</param>
             <param name="can_fd">${can_fd}</param>

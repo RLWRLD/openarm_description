@@ -19,6 +19,7 @@
             ee_type:=''
             has_head
             ros2_control:=false
+            can_interface:=''
             use_fake_hardware:=false
             fake_sensor_commands:=false
             no_prefix:='false'
@@ -31,6 +32,8 @@
             left_arm_base_xyz='0 0 0'
             right_arm_base_rpy='0 0 0'
             left_arm_base_rpy='0 0 0'
+            left_can_interface:='can1'
+            right_can_interface:='can0'
             left_arm_prefix:='left_'
             right_arm_prefix:='right_'
             can_fd:='true'
@@ -100,6 +103,8 @@
         <xacro:if value="${ros2_control}">
             <xacro:openarm_bimanual_ros2_control
             arm_type="${arm_type}"
+            left_can_interface="${left_can_interface}"
+            right_can_interface="${right_can_interface}"
             use_fake_hardware="${use_fake_hardware}"
             fake_sensor_commands="${fake_sensor_commands}"
             left_arm_prefix="${left_arm_prefix}"
@@ -158,6 +163,7 @@
         <xacro:openarm_arm_ros2_control
             arm_type="${arm_type}"
             arm_prefix="${arm_prefix_modified}"
+            can_interface="${can_interface}"
             use_fake_hardware="${use_fake_hardware}"
             fake_sensor_commands="${fake_sensor_commands}"
             hand="${hand}"
