@@ -51,9 +51,13 @@
     <xacro:if value="${ee_type != 'none'}">
         <xacro:include filename="$(find openarm_description)/urdf/ee/${ee_type}_arguments.xacro" />
     </xacro:if>
+    <xacro:if value="${has_head}">
+        <xacro:include filename="$(find openarm_description)/urdf/head/openarm_head.xacro" />
+    </xacro:if>
 
     <xacro:property name="arm_prefix_modified" value="${'' if arm_prefix == '' else arm_prefix + '_'}" />
     <xacro:property name="body_prefix_modified" value="${'' if body_prefix == '' else body_prefix + '_'}" />
+    <xacro:property name="body_link0_name" value="${'body_link0' if no_prefix else 'openarm_body_link0'}" />
 
     <xacro:if value="${bimanual}">
 
@@ -68,6 +72,14 @@
         inertials="${body_inertials}"
         kinematics="${body_kinematics}"
         kinematics_link="${body_kinematics_link}" />
+
+        <xacro:if value="${has_head}">
+            <joint name="openarm_head_mount" type="fixed">
+                <parent link="${body_link0_name}" />
+                <child link="base_link" />
+                <origin xyz="-0.0025 0 0.750" rpy="0 0 -1.5708" />
+            </joint>
+        </xacro:if>
 
         <!-- left arm -->
         <xacro:openarm_arm
@@ -110,7 +122,7 @@
             left_arm_prefix="${left_arm_prefix}"
             right_arm_prefix="${right_arm_prefix}"
             hand="${hand}"
-            has_head="${has_head}"/>
+            has_head="${has_head_enabled}"/>
         </xacro:if>
 
         <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">

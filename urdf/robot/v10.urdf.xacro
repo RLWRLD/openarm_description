@@ -9,7 +9,7 @@
 
   <xacro:arg name="ee_type" default="openarm_hand" />
 
-  <xacro:arg name="has_head" default="false" />
+  <xacro:arg name="has_head" default="true" />
 
   <xacro:arg name="no_prefix" default="false"/>
 
