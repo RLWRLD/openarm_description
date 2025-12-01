@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="openarm_head" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<link name="base_link">
+<link name="head_base_link">
   <inertial>
     <origin xyz="0.0026203635436640627 9.06133544157364e-15 0.003991777276961831" rpy="0 0 0"/>
     <mass value="0.15752081080534908"/>
@@ -10,13 +10,13 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="$(find openarm_description)/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="$(find openarm_description)/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -121,7 +121,7 @@
   </collision>
 </link>
 
-<link name="Body1__1__1">
+<link name="camera">
   <inertial>
     <origin xyz="-4.476419235288631e-15 -0.016096492802925383 0.014964449995599954" rpy="0 0 0"/>
     <mass value="1.2916673327792563"/>
@@ -130,55 +130,55 @@
   <visual>
     <origin xyz="0.0 -0.047 -0.1295" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/Body1__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="$(find openarm_description)/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0.0 -0.047 -0.1295" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/Body1__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="$(find openarm_description)/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<joint name="Rigid 2" type="fixed">
+<joint name="openarm_head_base_to_pitch_case_1" type="fixed">
   <origin xyz="0.025 -0.002 0.06" rpy="0 0 0"/>
-  <parent link="base_link"/>
+  <parent link="head_base_link"/>
   <child link="pitch_motor_case_1"/>
 </joint>
 
-<joint name="Revolute 10" type="revolute">
+<joint name="openarm_head_pitch" type="revolute">
   <origin xyz="-0.0375 0.001656 -0.018928" rpy="0 0 0"/>
   <parent link="pitch_motor_case_1"/>
   <child link="pitch_motor_rotor_1"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
-  <limit lower="0.0" upper="1.0" />
+  <limit lower="0.0" upper="1.5708" effort="10.0" velocity="10.0" />
 </joint>
 
-<joint name="Rigid 12" type="fixed">
+<joint name="openarm_head_pitch_to_yaw_case" type="fixed">
   <origin xyz="-0.000935 0.0134 0.037" rpy="0 0 0"/>
   <parent link="pitch_motor_rotor_1"/>
   <child link="pitch_motor_case_2"/>
 </joint>
 
-<joint name="Revolute 14" type="revolute">
+<joint name="openarm_head_yaw" type="revolute">
   <origin xyz="0.013435 -0.013435 0.0375" rpy="0 0 0"/>
   <parent link="pitch_motor_case_2"/>
   <child link="pitch_motor_rotor_2"/>
   <axis xyz="-0.0 0.0 1.0"/>
-  <limit lower="0.0" upper="1.0" />
+  <limit lower="-1.5708" upper="1.5708" effort="10.0" velocity="10.0" />
 </joint>
 
-<joint name="Rigid 17" type="fixed">
+<joint name="openarm_head_yaw_to_body1" type="fixed">
   <origin xyz="0.00675 0.011691 0.0085" rpy="0 0 0"/>
   <parent link="pitch_motor_rotor_2"/>
   <child link="Body1_1"/>
 </joint>
 
-<joint name="Rigid 18" type="fixed">
+<joint name="openarm_head_body1_to_body1_inner" type="fixed">
   <origin xyz="-0.00675 0.035309 0.005" rpy="0 0 0"/>
   <parent link="Body1_1"/>
-  <child link="Body1__1__1"/>
+  <child link="camera"/>
 </joint>
 
 </robot>

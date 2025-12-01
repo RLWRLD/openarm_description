@@ -76,7 +76,7 @@
         <xacro:if value="${has_head}">
             <joint name="openarm_head_mount" type="fixed">
                 <parent link="${body_link0_name}" />
-                <child link="base_link" />
+                <child link="head_base_link" />
                 <origin xyz="-0.0025 0 0.750" rpy="0 0 -1.5708" />
             </joint>
         </xacro:if>
