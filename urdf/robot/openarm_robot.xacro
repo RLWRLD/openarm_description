@@ -17,6 +17,7 @@
             rpy:='0 0 0'
             hand:='false'
             ee_type:=''
+            has_head
             ros2_control:=false
             can_interface:=''
             use_fake_hardware:=false
@@ -26,7 +27,7 @@
             body_prefix:=''
             arm_connected_to='base'
             body_connected_to='world'
-            bimanual:=false
+            bimanual
             right_arm_base_xyz='0 0 0'
             left_arm_base_xyz='0 0 0'
             right_arm_base_rpy='0 0 0'
@@ -50,9 +51,13 @@
     <xacro:if value="${ee_type != 'none'}">
         <xacro:include filename="$(find openarm_description)/urdf/ee/${ee_type}_arguments.xacro" />
     </xacro:if>
+    <xacro:if value="${has_head}">
+        <xacro:include filename="$(find openarm_description)/urdf/head/openarm_head.xacro" />
+    </xacro:if>
 
     <xacro:property name="arm_prefix_modified" value="${'' if arm_prefix == '' else arm_prefix + '_'}" />
     <xacro:property name="body_prefix_modified" value="${'' if body_prefix == '' else body_prefix + '_'}" />
+    <xacro:property name="body_link0_name" value="${'body_link0' if no_prefix else 'openarm_body_link0'}" />
 
     <xacro:if value="${bimanual}">
 
@@ -67,6 +72,14 @@
         inertials="${body_inertials}"
         kinematics="${body_kinematics}"
         kinematics_link="${body_kinematics_link}" />
+
+        <xacro:if value="${has_head}">
+            <joint name="openarm_head_mount" type="fixed">
+                <parent link="${body_link0_name}" />
+                <child link="head_base_link" />
+                <origin xyz="-0.0025 0 0.750" rpy="0 0 -1.5708" />
+            </joint>
+        </xacro:if>
 
         <!-- left arm -->
         <xacro:openarm_arm
@@ -108,7 +121,8 @@
             fake_sensor_commands="${fake_sensor_commands}"
             left_arm_prefix="${left_arm_prefix}"
             right_arm_prefix="${right_arm_prefix}"
-            hand="${hand}"/>
+            hand="${hand}"
+            has_head="${has_head}"/>
         </xacro:if>
 
         <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">

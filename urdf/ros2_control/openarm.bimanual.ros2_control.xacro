@@ -8,6 +8,7 @@
              use_fake_hardware:=^|false
              fake_sensor_commands:=^|false
              hand:=^|false
+             has_head
              left_arm_prefix:=^|left_
              right_arm_prefix:=^|right_
              can_fd:=^|true">
@@ -93,6 +94,26 @@
         <xacro:configure_joint joint_name="openarm_${right_arm_prefix}finger_joint1" initial_position="0.0" />
       </xacro:if>
     </ros2_control>
+
+    <!-- Head Module Hardware Interface -->
+    <xacro:if value="${has_head}">
+      <ros2_control name="openarm_head" type="system">
+        <hardware>
+          <plugin>openarm_hardware/OpenArmHeadV1</plugin>
+          <param name="can_fd">${can_fd}</param>
+        </hardware>
+        <joint name="openarm_head_pitch">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+        </joint>
+        <joint name="openarm_head_yaw">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+        </joint>
+      </ros2_control>
+    </xacro:if>
 
   </xacro:macro>
 

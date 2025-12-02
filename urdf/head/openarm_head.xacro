@@ -1,0 +1,184 @@
+<?xml version="1.0" ?>
+<robot name="openarm_head" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<link name="head_base_link">
+  <inertial>
+    <origin xyz="0.0026203635436640627 9.06133544157364e-15 0.003991777276961831" rpy="0 0 0"/>
+    <mass value="0.15752081080534908"/>
+    <inertia ixx="4.8e-05" iyy="2.6e-05" izz="7.3e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pitch_motor_rotor_1">
+  <inertial>
+    <origin xyz="-0.003737234840155715 4.216739847323039e-09 -7.936074089553991e-10" rpy="0 0 0"/>
+    <mass value="0.04790732030032129"/>
+    <inertia ixx="8e-06" iyy="4e-06" izz="4e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0125 0.0 -0.0415" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0.0125 0.0 -0.0415" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pitch_motor_case_1">
+  <inertial>
+    <origin xyz="-0.02365457038760069 0.0015631002328282656 -0.01903835002780154" rpy="0 0 0"/>
+    <mass value="0.7274632351161315"/>
+    <inertia ixx="0.000313" iyy="0.000249" izz="0.000249" ixy="1e-06" iyz="-1e-06" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.025 0.001656 -0.060428" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="-0.025 0.001656 -0.060428" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pitch_motor_case_2">
+  <inertial>
+    <origin xyz="0.013290752155116443 -0.013435233719801938 0.02365457038760796" rpy="0 0 0"/>
+    <mass value="0.7274632351161315"/>
+    <inertia ixx="0.000248" iyy="0.00025" izz="0.000313" ixy="0.0" iyz="-0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.013435 -0.013435 -0.0785" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0.013435 -0.013435 -0.0785" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pitch_motor_rotor_2">
+  <inertial>
+    <origin xyz="2.1025221699785333e-09 3.740338630878902e-09 0.003737234840162862" rpy="0 0 0"/>
+    <mass value="0.04790732030032129"/>
+    <inertia ixx="4e-06" iyy="4e-06" izz="8e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.0 -0.116" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.0 -0.116" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Body1_1">
+  <inertial>
+    <origin xyz="-0.006750000000004441 0.0034904296859870794 0.0025342015065007995" rpy="0 0 0"/>
+    <mass value="0.5149600630136327"/>
+    <inertia ixx="0.000182" iyy="0.001854" izz="0.002032" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.00675 -0.011691 -0.1245" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/Body1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="-0.00675 -0.011691 -0.1245" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/Body1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera">
+  <inertial>
+    <origin xyz="-4.476419235288631e-15 -0.016096492802925383 0.014964449995599954" rpy="0 0 0"/>
+    <mass value="1.2916673327792563"/>
+    <inertia ixx="0.000206" iyy="0.003218" izz="0.003236" ixy="-0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.047 -0.1295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.047 -0.1295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://openarm_description/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="openarm_head_base_to_pitch_case_1" type="fixed">
+  <origin xyz="0.025 -0.002 0.06" rpy="0 0 0"/>
+  <parent link="head_base_link"/>
+  <child link="pitch_motor_case_1"/>
+</joint>
+
+<joint name="openarm_head_pitch" type="revolute">
+  <origin xyz="-0.0375 0.001656 -0.018928" rpy="0 0 0"/>
+  <parent link="pitch_motor_case_1"/>
+  <child link="pitch_motor_rotor_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit lower="0.0" upper="1.5708" effort="10.0" velocity="10.0" />
+</joint>
+
+<joint name="openarm_head_pitch_to_yaw_case" type="fixed">
+  <origin xyz="-0.000935 0.0134 0.037" rpy="0 0 0"/>
+  <parent link="pitch_motor_rotor_1"/>
+  <child link="pitch_motor_case_2"/>
+</joint>
+
+<joint name="openarm_head_yaw" type="revolute">
+  <origin xyz="0.013435 -0.013435 0.0375" rpy="0 0 0"/>
+  <parent link="pitch_motor_case_2"/>
+  <child link="pitch_motor_rotor_2"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+  <limit lower="-1.5708" upper="1.5708" effort="10.0" velocity="10.0" />
+</joint>
+
+<joint name="openarm_head_yaw_to_body1" type="fixed">
+  <origin xyz="0.00675 0.011691 0.0085" rpy="0 0 0"/>
+  <parent link="pitch_motor_rotor_2"/>
+  <child link="Body1_1"/>
+</joint>
+
+<joint name="openarm_head_body1_to_body1_inner" type="fixed">
+  <origin xyz="-0.00675 0.035309 0.005" rpy="0 0 0"/>
+  <parent link="Body1_1"/>
+  <child link="camera"/>
+</joint>
+
+</robot>
