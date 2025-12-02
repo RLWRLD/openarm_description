@@ -10,13 +10,13 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/head_base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -30,13 +30,13 @@
   <visual>
     <origin xyz="0.0125 0.0 -0.0415" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_rotor_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0.0125 0.0 -0.0415" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_rotor_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -50,13 +50,13 @@
   <visual>
     <origin xyz="-0.025 0.001656 -0.060428" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_case_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="-0.025 0.001656 -0.060428" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_case_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -70,13 +70,13 @@
   <visual>
     <origin xyz="0.013435 -0.013435 -0.0785" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_case_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0.013435 -0.013435 -0.0785" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_case_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_case_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -90,13 +90,13 @@
   <visual>
     <origin xyz="0.0 -0.0 -0.116" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_rotor_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0.0 -0.0 -0.116" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/pitch_motor_rotor_2.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/pitch_motor_rotor_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -110,13 +110,13 @@
   <visual>
     <origin xyz="-0.00675 -0.011691 -0.1245" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/Body1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/Body1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="-0.00675 -0.011691 -0.1245" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/Body1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/Body1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -130,13 +130,13 @@
   <visual>
     <origin xyz="0.0 -0.047 -0.1295" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0.0 -0.047 -0.1295" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="$(find openarm_description)/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://openarm_description/meshes/head/visual/camera.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
