@@ -101,6 +101,7 @@
         <hardware>
           <plugin>openarm_hardware/OpenArmHeadV1</plugin>
           <param name="can_fd">${can_fd}</param>
+          <param name="can_interface">can-head</param>
         </hardware>
         <joint name="openarm_head_pitch">
           <command_interface name="position"/>
