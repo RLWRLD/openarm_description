@@ -31,9 +31,12 @@
           </xacro:unless>
         </hardware>
 
-      <xacro:macro name="configure_joint" params="joint_name initial_position">
+      <xacro:macro name="configure_joint" params="joint_name initial_position min_position max_position">
         <joint name="${joint_name}">
-          <command_interface name="position"/>
+          <command_interface name="position">
+            <param name="min">${min_position}</param>
+            <param name="max">${max_position}</param>
+          </command_interface>
           <command_interface name="velocity"/>
           <command_interface name="effort"/>
 
@@ -51,16 +54,16 @@
         </joint>
       </xacro:macro>
 
-      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint1" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint2" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint3" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint4" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint5" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint6" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint7" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint1" initial_position="0.0" min_position="-3.4906" max_position="1.3788"/>
+      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint2" initial_position="0.0" min_position="-3.32" max_position="0.17"/>
+      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint3" initial_position="0.0" min_position="-1.5708" max_position="1.5708"/>
+      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint4" initial_position="0.0" min_position="0" max_position="2.3911"/>
+      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint5" initial_position="0.0" min_position="-1.5708" max_position="1.5708"/>
+      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint6" initial_position="0.0" min_position="-0.7854" max_position="0.7854"/>
+      <xacro:configure_joint joint_name="openarm_${left_arm_prefix}joint7" initial_position="0.0" min_position="-1.5708" max_position="1.5708"/>
 
       <xacro:if value="${hand}">
-        <xacro:configure_joint joint_name="openarm_${left_arm_prefix}finger_joint1" initial_position="0.0" />
+        <xacro:configure_joint joint_name="openarm_${left_arm_prefix}finger_joint1" initial_position="0.0" min_position="0" max_position="0.1"/>
       </xacro:if>
     </ros2_control>
 
@@ -82,16 +85,16 @@
           </xacro:unless>
         </hardware>
 
-      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint1" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint2" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint3" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint4" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint5" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint6" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint7" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint1" initial_position="0.0" min_position="-1.3788" max_position="3.4906"/>
+      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint2" initial_position="0.0" min_position="-0.17" max_position="3.32"/>
+      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint3" initial_position="0.0" min_position="-1.5708" max_position="1.5708"/>
+      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint4" initial_position="0.0" min_position="0" max_position="2.3911"/>
+      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint5" initial_position="0.0" min_position="-1.5708" max_position="1.5708"/>
+      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint6" initial_position="0.0" min_position="-0.7854" max_position="0.7854"/>
+      <xacro:configure_joint joint_name="openarm_${right_arm_prefix}joint7" initial_position="0.0" min_position="-1.5708" max_position="1.5708"/>
 
       <xacro:if value="${hand}">
-        <xacro:configure_joint joint_name="openarm_${right_arm_prefix}finger_joint1" initial_position="0.0" />
+        <xacro:configure_joint joint_name="openarm_${right_arm_prefix}finger_joint1" initial_position="0.0" min_position="0" max_position="0.1"/>
       </xacro:if>
     </ros2_control>
 
@@ -104,12 +107,18 @@
           <param name="can_interface">can-head</param>
         </hardware>
         <joint name="openarm_head_pitch">
-          <command_interface name="position"/>
+          <command_interface name="position">
+            <param name="min">0.0</param>
+            <param name="max">1.5708</param>
+          </command_interface>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
         </joint>
         <joint name="openarm_head_yaw">
-          <command_interface name="position"/>
+          <command_interface name="position">
+            <param name="min">-1.5708</param>
+            <param name="max">1.5708</param>
+          </command_interface>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
         </joint>
