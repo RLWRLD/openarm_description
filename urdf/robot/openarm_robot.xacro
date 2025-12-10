@@ -15,8 +15,7 @@
             parent:='world'
             xyz:='0 0 0'
             rpy:='0 0 0'
-            hand:='false'
-            ee_type:=''
+            ee_type
             has_head
             ros2_control:=false
             can_interface:=''
@@ -44,15 +43,13 @@
     <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_arm.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body_macro.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_macro.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.ros2_control.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.bimanual.ros2_control.xacro" />
-    <xacro:if value="${ee_type != 'none'}">
-        <xacro:include filename="$(find openarm_description)/urdf/ee/${ee_type}_arguments.xacro" />
-    </xacro:if>
-    <xacro:if value="${has_head}">
-        <xacro:include filename="$(find openarm_description)/urdf/head/openarm_head.xacro" />
+
+    <xacro:if value="${ee_type == 'openarm_hand'}">
+        <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand.xacro" />
+        <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_macro.xacro" />
+        <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_arguments.xacro" />
     </xacro:if>
 
     <xacro:property name="arm_prefix_modified" value="${'' if arm_prefix == '' else arm_prefix + '_'}" />
@@ -74,6 +71,7 @@
         kinematics_link="${body_kinematics_link}" />
 
         <xacro:if value="${has_head}">
+            <xacro:include filename="$(find openarm_description)/urdf/head/openarm_head.xacro" />
             <joint name="openarm_head_mount" type="fixed">
                 <parent link="${body_link0_name}" />
                 <child link="head_base_link" />
@@ -125,7 +123,7 @@
             has_head="${has_head}"/>
         </xacro:if>
 
-        <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">
+        <xacro:if value="${ee_type == 'openarm_hand'}">
             <xacro:openarm_hand
                 connected_to="openarm_left_link7"
                 arm_type="${arm_type}"
@@ -152,7 +150,52 @@
                 tcp_rpy="$(arg tcp_rpy)"
                 description_pkg="$(arg description_pkg)"
             />
-          </xacro:if>
+        </xacro:if>
+
+        <xacro:if value="${ee_type == 'rh56f1'}">
+            <link name="left_hand_mount" type="fixed">
+                <visual>
+                    <origin rpy="0 0 3.1416" xyz="0 0 0"/>
+                    <geometry>
+                    <mesh filename="package://openarm_description/meshes/ee/rh56f1/visual/rh56f1_mount.stl" scale="0.001 0.001 0.001"/>
+                    </geometry>
+                </visual>
+            </link>
+            <xacro:include filename="$(find inspire_hand_description)/RH56F1/left/urdf/RH56F1_L.xacro" />
+            <xacro:RH56F1_L />
+            <joint name="left_arm_to_mount" type="fixed">
+                <parent link="openarm_left_link7" />
+                <child link="left_hand_mount" />
+                <origin xyz="0 0 0.0495" rpy="0 0 0" />
+            </joint>
+            <joint name="left_mount_to_rh56f1" type="fixed">
+                <parent link="left_hand_mount" />
+                <child link="left_hand_base_link" />
+                <origin xyz="0 0 0.006" rpy="0 0 1.5708" />
+            </joint>
+
+            <link name="right_hand_mount" type="fixed">
+                <visual>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                    <mesh filename="package://openarm_description/meshes/ee/rh56f1/visual/rh56f1_mount.stl" scale="0.001 0.001 0.001"/>
+                    </geometry>
+                </visual>
+            </link>
+            <xacro:include filename="$(find inspire_hand_description)/RH56F1/right/urdf/RH56F1_R.xacro" />
+            <xacro:RH56F1_R />
+            <joint name="right_arm_to_mount" type="fixed">
+                <parent link="openarm_right_link7" />
+                <child link="right_hand_mount" />
+                <origin xyz="0 0 0.0495" rpy="0 0 0" />
+            </joint>
+            <joint name="right_mount_to_rh56f1" type="fixed">
+                <parent link="right_hand_mount" />
+                <child link="right_hand_base_link" />
+                <origin xyz="0 0 0.006" rpy="0 0 -1.5708" />
+            </joint>
+        </xacro:if>
+        
     </xacro:if>
 
     <xacro:if value="${not bimanual}">
@@ -183,13 +226,12 @@
             can_fd="${can_fd}"/>
         </xacro:if>
 
-        <xacro:if value="${hand and ee_type == 'openarm_hand'}">
+        <xacro:if value="${ee_type == 'openarm_hand'}">
 
         <xacro:property name="special_connection" value="$(arg special_connection)" />
         <!-- <xacro:property name="connection" value="${special_connection if special_connection != '' else arm_type + '_link7'}" /> -->
         <xacro:property name="connection" value="${special_connection if special_connection != '' else 'openarm' + '_link7'}" />
 
-        <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">
         <xacro:openarm_hand
             connected_to="${arm_prefix_modified}${connection}"
             arm_type="${arm_type}"
@@ -203,9 +245,8 @@
             tcp_rpy="$(arg tcp_rpy)"
             description_pkg="$(arg description_pkg)"/>
         </xacro:if>
-        </xacro:if>
 
-        </xacro:if>
+    </xacro:if>
 
   </xacro:macro>
 </robot>
