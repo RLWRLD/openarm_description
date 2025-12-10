@@ -7,17 +7,11 @@
 
   <xacro:arg name="body_type" default="v10" />
 
-  <xacro:arg name="ee_type" default="openarm_hand" />
+  <xacro:arg name="ee_type" default="none" />
 
   <xacro:arg name="has_head" default="true" />
 
   <xacro:arg name="no_prefix" default="false"/>
-
-  <xacro:arg name="hand" default="false" />
-
-  <xacro:if value="$(eval ee_type == 'none')">
-    <xacro:property name="hand" value="false"/>
-  </xacro:if>
 
   <xacro:arg name="parent" default="world" />
 
@@ -63,7 +57,6 @@
   body_kinematics="${xacro.load_yaml('$(find openarm_description)/config/body/v10/kinematics.yaml')}"
   body_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/body/v10/kinematics.yaml')}"
   ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/kinematics_link.yaml')}"
-  hand="$(arg hand)"
   ee_type="$(arg ee_type)"
   has_head="$(arg has_head)"
   ros2_control="$(arg ros2_control)"
