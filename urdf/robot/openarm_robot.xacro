@@ -119,7 +119,7 @@
             fake_sensor_commands="${fake_sensor_commands}"
             left_arm_prefix="${left_arm_prefix}"
             right_arm_prefix="${right_arm_prefix}"
-            hand="${hand}"
+            hand="false"
             has_head="${has_head}"/>
         </xacro:if>
 
