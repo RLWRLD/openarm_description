@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="RH56F1_R">
+
+  <xacro:include filename="$(find inspire_hand_description)/RH56F1/right/urdf/RH56F1_R.xacro" />
+  <xacro:RH56F1_R />
+
+</robot>

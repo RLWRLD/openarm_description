@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>inspire_hand_description</name>
+  <version>0.1.0</version>
+  <description>URDF/XACRO, meshes, and launch files for Inspire Hand family (starting with RH56F1 left/right).</description>
+
+  <author email="dev@inspire-robots.com">Inspire Robots</author>
+  <maintainer email="dev@inspire-robots.com">Inspire Robots</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>xacro</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>rviz2</depend>
+  <depend>gazebo_ros</depend>
+
+  <export>
+    <architecture_independent/>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
