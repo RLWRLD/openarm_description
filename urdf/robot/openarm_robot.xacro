@@ -161,7 +161,7 @@
                     </geometry>
                 </visual>
             </link>
-            <xacro:include filename="$(find inspire_hand_description)/RH56F1/left/urdf/RH56F1_L.xacro" />
+            <xacro:include filename="${hand_include_prefix}/RH56F1/left/urdf/RH56F1_L.xacro" />
             <xacro:RH56F1_L />
             <joint name="left_arm_to_mount" type="fixed">
                 <parent link="openarm_left_link7" />
@@ -182,7 +182,7 @@
                     </geometry>
                 </visual>
             </link>
-            <xacro:include filename="$(find inspire_hand_description)/RH56F1/right/urdf/RH56F1_R.xacro" />
+            <xacro:include filename="${hand_include_prefix}/RH56F1/right/urdf/RH56F1_R.xacro" />
             <xacro:RH56F1_R />
             <joint name="right_arm_to_mount" type="fixed">
                 <parent link="openarm_right_link7" />

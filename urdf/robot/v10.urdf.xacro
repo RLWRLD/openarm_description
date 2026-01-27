@@ -6,11 +6,15 @@
   <!-- ROS mode (default): use package:// for meshes -->
   <xacro:unless value="$(arg standalone)">
     <xacro:property name="mesh_prefix" value="package://openarm_description" scope="global" />
+    <xacro:property name="hand_mesh_prefix" value="package://inspire_hand_description" scope="global" />
+    <xacro:property name="hand_include_prefix" value="$(find inspire_hand_description)" scope="global" />
   </xacro:unless>
 
-  <!-- Standalone mode: use relative paths for meshes -->
+  <!-- Standalone mode: use relative paths -->
   <xacro:if value="$(arg standalone)">
     <xacro:property name="mesh_prefix" value="." scope="global" />
+    <xacro:property name="hand_mesh_prefix" value="./inspire_hand_description" scope="global" />
+    <xacro:property name="hand_include_prefix" value="../../inspire_hand_description" scope="global" />
   </xacro:if>
 
   <xacro:include filename="openarm_robot.xacro"/>

@@ -28,7 +28,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/base_link.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -42,7 +42,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/base_link.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -68,7 +68,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_1.STL" />
       </geometry>
       <material
         name="">
@@ -82,7 +82,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -121,7 +121,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_2.STL" />
       </geometry>
       <material
         name="">
@@ -135,7 +135,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -174,7 +174,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_3.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_3.STL" />
       </geometry>
       <material
         name="">
@@ -188,7 +188,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_3.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_3.STL" />
       </geometry>
     </collision>
   </link>
@@ -227,7 +227,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_force_sensor.STL" />
       </geometry>
       <material
         name="">
@@ -241,7 +241,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/plam_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/plam_force_sensor.STL" />
       </geometry>
     </collision>
   </link>
@@ -280,7 +280,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_1.STL" />
       </geometry>
       <material
         name="">
@@ -294,7 +294,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -339,7 +339,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_2.STL" />
       </geometry>
       <material
         name="">
@@ -353,7 +353,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -397,7 +397,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_3.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_3.STL" />
       </geometry>
       <material
         name="">
@@ -411,7 +411,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_3.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_3.STL" />
       </geometry>
     </collision>
   </link>
@@ -459,7 +459,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_4.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_4.STL" />
       </geometry>
       <material
         name="">
@@ -473,7 +473,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_thumb_4.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_thumb_4.STL" />
       </geometry>
     </collision>
   </link>
@@ -521,7 +521,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/thumb_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/thumb_force_sensor.STL" />
       </geometry>
       <material
         name="">
@@ -535,7 +535,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/thumb_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/thumb_force_sensor.STL" />
       </geometry>
     </collision>
   </link>
@@ -574,7 +574,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/thumb_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/thumb_tip.STL" />
       </geometry>
       <material
         name="">
@@ -588,7 +588,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/thumb_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/thumb_tip.STL" />
       </geometry>
     </collision>
   </link>
@@ -627,7 +627,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_index_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_index_1.STL" />
       </geometry>
       <material
         name="">
@@ -641,7 +641,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_index_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_index_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -685,7 +685,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_index_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_index_2.STL" />
       </geometry>
       <material
         name="">
@@ -699,7 +699,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_index_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_index_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -747,7 +747,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/index_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/index_force_sensor.STL" />
       </geometry>
       <material
         name="">
@@ -761,7 +761,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/index_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/index_force_sensor.STL" />
       </geometry>
     </collision>
   </link>
@@ -800,7 +800,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/index_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/index_tip.STL" />
       </geometry>
       <material
         name="">
@@ -814,7 +814,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/index_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/index_tip.STL" />
       </geometry>
     </collision>
   </link>
@@ -853,7 +853,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_middle_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_middle_1.STL" />
       </geometry>
       <material
         name="">
@@ -867,7 +867,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_middle_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_middle_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -911,7 +911,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_middle_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_middle_2.STL" />
       </geometry>
       <material
         name="">
@@ -925,7 +925,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_middle_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_middle_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -973,7 +973,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/middle_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/middle_force_sensor.STL" />
       </geometry>
       <material
         name="">
@@ -987,7 +987,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/middle_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/middle_force_sensor.STL" />
       </geometry>
     </collision>
   </link>
@@ -1026,7 +1026,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/middle_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/middle_tip.STL" />
       </geometry>
       <material
         name="">
@@ -1040,7 +1040,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/middle_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/middle_tip.STL" />
       </geometry>
     </collision>
   </link>
@@ -1079,7 +1079,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_ring_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_ring_1.STL" />
       </geometry>
       <material
         name="">
@@ -1093,7 +1093,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_ring_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_ring_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -1137,7 +1137,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_ring_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_ring_2.STL" />
       </geometry>
       <material
         name="">
@@ -1151,7 +1151,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_ring_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_ring_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -1199,7 +1199,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/ring_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/ring_force_sensor.STL" />
       </geometry>
       <material
         name="">
@@ -1213,7 +1213,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/ring_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/ring_force_sensor.STL" />
       </geometry>
     </collision>
   </link>
@@ -1252,7 +1252,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/ring_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/ring_tip.STL" />
       </geometry>
       <material
         name="">
@@ -1266,7 +1266,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/ring_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/ring_tip.STL" />
       </geometry>
     </collision>
   </link>
@@ -1305,7 +1305,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_little_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_little_1.STL" />
       </geometry>
       <material
         name="">
@@ -1319,7 +1319,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_little_1.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_little_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -1363,7 +1363,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_little_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_little_2.STL" />
       </geometry>
       <material
         name="">
@@ -1377,7 +1377,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/right_little_2.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/right_little_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -1425,7 +1425,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/little_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/little_force_sensor.STL" />
       </geometry>
       <material
         name="">
@@ -1439,7 +1439,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/little_force_sensor.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/little_force_sensor.STL" />
       </geometry>
     </collision>
   </link>
@@ -1478,7 +1478,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/little_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/little_tip.STL" />
       </geometry>
       <material
         name="">
@@ -1492,7 +1492,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://inspire_hand_description/RH56F1/right/meshes/little_tip.STL" />
+          filename="${hand_mesh_prefix}/RH56F1/right/meshes/little_tip.STL" />
       </geometry>
     </collision>
   </link>
