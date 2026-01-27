@@ -39,17 +39,17 @@
             "
             >
 
-    <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_macro.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_arm.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body_macro.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.ros2_control.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.bimanual.ros2_control.xacro" />
+    <xacro:include filename="${pkg_path}/urdf/arm/openarm_macro.xacro" />
+    <xacro:include filename="${pkg_path}/urdf/arm/openarm_arm.xacro" />
+    <xacro:include filename="${pkg_path}/urdf/body/openarm_body_macro.xacro" />
+    <xacro:include filename="${pkg_path}/urdf/body/openarm_body.xacro" />
+    <xacro:include filename="${pkg_path}/urdf/ros2_control/openarm.ros2_control.xacro" />
+    <xacro:include filename="${pkg_path}/urdf/ros2_control/openarm.bimanual.ros2_control.xacro" />
 
     <xacro:if value="${ee_type == 'openarm_hand'}">
-        <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand.xacro" />
-        <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_macro.xacro" />
-        <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_arguments.xacro" />
+        <xacro:include filename="${pkg_path}/urdf/ee/openarm_hand.xacro" />
+        <xacro:include filename="${pkg_path}/urdf/ee/openarm_hand_macro.xacro" />
+        <xacro:include filename="${pkg_path}/urdf/ee/openarm_hand_arguments.xacro" />
     </xacro:if>
 
     <xacro:property name="arm_prefix_modified" value="${'' if arm_prefix == '' else arm_prefix + '_'}" />
@@ -71,7 +71,7 @@
         kinematics_link="${body_kinematics_link}" />
 
         <xacro:if value="${has_head}">
-            <xacro:include filename="$(find openarm_description)/urdf/head/openarm_head.xacro" />
+            <xacro:include filename="${pkg_path}/urdf/head/openarm_head.xacro" />
             <joint name="openarm_head_mount" type="fixed">
                 <parent link="${body_link0_name}" />
                 <child link="head_base_link" />
@@ -129,8 +129,8 @@
                 arm_type="${arm_type}"
                 arm_prefix="left_"
                 ee_type="${ee_type}"
-                ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/kinematics_link.yaml')}"
-                ee_inertials="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/inertials.yaml')}"
+                ee_kinematics_link="${xacro.load_yaml(pkg_path + '/config/hand/openarm_hand/kinematics_link.yaml')}"
+                ee_inertials="${xacro.load_yaml(pkg_path + '/config/hand/openarm_hand/inertials.yaml')}"
                 rpy_ee="$(arg rpy_ee)"
                 xyz_ee="$(arg xyz_ee)"
                 tcp_xyz="$(arg tcp_xyz)"
@@ -142,8 +142,8 @@
                 arm_type="${arm_type}"
                 arm_prefix="right_"
                 ee_type="${ee_type}"
-                ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/kinematics_link.yaml')}"
-                ee_inertials="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/inertials.yaml')}"
+                ee_kinematics_link="${xacro.load_yaml(pkg_path + '/config/hand/openarm_hand/kinematics_link.yaml')}"
+                ee_inertials="${xacro.load_yaml(pkg_path + '/config/hand/openarm_hand/inertials.yaml')}"
                 rpy_ee="$(arg rpy_ee)"
                 xyz_ee="$(arg xyz_ee)"
                 tcp_xyz="$(arg tcp_xyz)"
@@ -157,7 +157,7 @@
                 <visual>
                     <origin rpy="0 0 3.1416" xyz="0 0 0"/>
                     <geometry>
-                    <mesh filename="package://openarm_description/meshes/ee/rh56f1/visual/rh56f1_mount.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_prefix}/meshes/ee/rh56f1/visual/rh56f1_mount.stl" scale="0.001 0.001 0.001"/>
                     </geometry>
                 </visual>
             </link>
@@ -178,7 +178,7 @@
                 <visual>
                     <origin rpy="0 0 0" xyz="0 0 0"/>
                     <geometry>
-                    <mesh filename="package://openarm_description/meshes/ee/rh56f1/visual/rh56f1_mount.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_prefix}/meshes/ee/rh56f1/visual/rh56f1_mount.stl" scale="0.001 0.001 0.001"/>
                     </geometry>
                 </visual>
             </link>
@@ -237,8 +237,8 @@
             arm_type="${arm_type}"
             arm_prefix="${arm_prefix_modified}"
             ee_type="${ee_type}"
-            ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/kinematics_link.yaml')}"
-            ee_inertials="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/inertials.yaml')}"
+            ee_kinematics_link="${xacro.load_yaml(pkg_path + '/config/hand/openarm_hand/kinematics_link.yaml')}"
+            ee_inertials="${xacro.load_yaml(pkg_path + '/config/hand/openarm_hand/inertials.yaml')}"
             rpy_ee="$(arg rpy_ee)"
             xyz_ee="$(arg xyz_ee)"
             tcp_xyz="$(arg tcp_xyz)"

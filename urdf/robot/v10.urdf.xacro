@@ -1,7 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="openarm">
 
-  <xacro:include filename="$(find openarm_description)/urdf/robot/openarm_robot.xacro"/>
+  <xacro:arg name="pkg_path" default="" />
+  <xacro:property name="pkg_path_arg" value="$(arg pkg_path)" />
+
+  <!-- ROS mode (default): use $(find ...) and package:// -->
+  <xacro:if value="${pkg_path_arg == ''}">
+    <xacro:property name="pkg_path" value="$(find openarm_description)" scope="global" />
+    <xacro:property name="mesh_prefix" value="package://openarm_description" scope="global" />
+  </xacro:if>
+
+  <!-- Standalone mode: use absolute path and file:// -->
+  <xacro:unless value="${pkg_path_arg == ''}">
+    <xacro:property name="pkg_path" value="${pkg_path_arg}" scope="global" />
+    <xacro:property name="mesh_prefix" value="file://${pkg_path_arg}" scope="global" />
+  </xacro:unless>
+
+  <xacro:include filename="${pkg_path}/urdf/robot/openarm_robot.xacro"/>
 
   <xacro:arg name="arm_type" default="v10" />
 
@@ -48,15 +63,15 @@
   <xacro:openarm_robot
   arm_type="v10"
   body_type="v10"
-  joint_limits="${xacro.load_yaml('$(find openarm_description)/config//arm/v10/joint_limits.yaml')}"
-  inertials="${xacro.load_yaml('$(find openarm_description)/config/arm/v10/inertials.yaml')}"
-  kinematics="${xacro.load_yaml('$(find openarm_description)/config/arm/v10/kinematics.yaml')}"
-  kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/arm/v10/kinematics_link.yaml')}"
-  kinematics_offset="${xacro.load_yaml('$(find openarm_description)/config/arm/v10/kinematics_offset.yaml')}"
-  body_inertials="${xacro.load_yaml('$(find openarm_description)/config/body/v10/inertials.yaml')}"
-  body_kinematics="${xacro.load_yaml('$(find openarm_description)/config/body/v10/kinematics.yaml')}"
-  body_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/body/v10/kinematics.yaml')}"
-  ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/kinematics_link.yaml')}"
+  joint_limits="${xacro.load_yaml(pkg_path + '/config/arm/v10/joint_limits.yaml')}"
+  inertials="${xacro.load_yaml(pkg_path + '/config/arm/v10/inertials.yaml')}"
+  kinematics="${xacro.load_yaml(pkg_path + '/config/arm/v10/kinematics.yaml')}"
+  kinematics_link="${xacro.load_yaml(pkg_path + '/config/arm/v10/kinematics_link.yaml')}"
+  kinematics_offset="${xacro.load_yaml(pkg_path + '/config/arm/v10/kinematics_offset.yaml')}"
+  body_inertials="${xacro.load_yaml(pkg_path + '/config/body/v10/inertials.yaml')}"
+  body_kinematics="${xacro.load_yaml(pkg_path + '/config/body/v10/kinematics.yaml')}"
+  body_kinematics_link="${xacro.load_yaml(pkg_path + '/config/body/v10/kinematics.yaml')}"
+  ee_kinematics_link="${xacro.load_yaml(pkg_path + '/config/hand/openarm_hand/kinematics_link.yaml')}"
   ee_type="$(arg ee_type)"
   has_head="$(arg has_head)"
   ros2_control="$(arg ros2_control)"

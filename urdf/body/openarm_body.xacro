@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="openarm_body">
 
 
-  <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body_macro.xacro" />
+  <xacro:include filename="${pkg_path}/urdf/body/openarm_body_macro.xacro" />
 
       <xacro:macro name="openarm_body"
       params="body_type
