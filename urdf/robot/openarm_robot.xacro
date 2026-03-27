@@ -195,7 +195,23 @@
                 <origin xyz="0 0 0.006" rpy="0 0 -1.5708" />
             </joint>
         </xacro:if>
-        
+
+        <xacro:if value="${ee_type == 'xhand1'}">
+            <xacro:include filename="${xhand_include_prefix}/urdf/xhand1_hand.urdf.xacro" />
+            <xacro:xhand1_hand
+                side="left"
+                reflect="-1"
+                parent_link="openarm_left_link7"
+                origin_xyz="0 0 0.055"
+                origin_rpy="0 0 1.5708" />
+            <xacro:xhand1_hand
+                side="right"
+                reflect="1"
+                parent_link="openarm_right_link7"
+                origin_xyz="0 0 0.055"
+                origin_rpy="0 0 -1.5708" />
+        </xacro:if>
+
     </xacro:if>
 
     <xacro:if value="${not bimanual}">

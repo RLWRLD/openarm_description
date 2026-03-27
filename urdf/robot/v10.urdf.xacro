@@ -3,18 +3,38 @@
 
   <xacro:arg name="standalone" default="false" />
 
-  <!-- ROS mode (default): use package:// for meshes -->
+  <xacro:arg name="ee_type" default="none" />
+
+  <!-- Common mesh prefix -->
   <xacro:unless value="$(arg standalone)">
     <xacro:property name="mesh_prefix" value="package://openarm_description" scope="global" />
-    <xacro:property name="hand_mesh_prefix" value="package://inspire_hand_description" scope="global" />
-    <xacro:property name="hand_include_prefix" value="$(find inspire_hand_description)" scope="global" />
   </xacro:unless>
-
-  <!-- Standalone mode: use relative paths -->
   <xacro:if value="$(arg standalone)">
     <xacro:property name="mesh_prefix" value="." scope="global" />
-    <xacro:property name="hand_mesh_prefix" value="./inspire_hand_description" scope="global" />
-    <xacro:property name="hand_include_prefix" value="../../inspire_hand_description" scope="global" />
+  </xacro:if>
+
+  <!-- Inspire hand (rh56f1) paths — only resolved when needed -->
+  <xacro:if value="${'$(arg ee_type)' == 'rh56f1'}">
+    <xacro:unless value="$(arg standalone)">
+      <xacro:property name="hand_mesh_prefix" value="package://inspire_hand_description" scope="global" />
+      <xacro:property name="hand_include_prefix" value="$(find inspire_hand_description)" scope="global" />
+    </xacro:unless>
+    <xacro:if value="$(arg standalone)">
+      <xacro:property name="hand_mesh_prefix" value="./inspire_hand_description" scope="global" />
+      <xacro:property name="hand_include_prefix" value="../../inspire_hand_description" scope="global" />
+    </xacro:if>
+  </xacro:if>
+
+  <!-- xhand1 paths — only resolved when needed -->
+  <xacro:if value="${'$(arg ee_type)' == 'xhand1'}">
+    <xacro:unless value="$(arg standalone)">
+      <xacro:property name="xhand_mesh_prefix" value="package://xhand_description" scope="global" />
+      <xacro:property name="xhand_include_prefix" value="$(find xhand_description)" scope="global" />
+    </xacro:unless>
+    <xacro:if value="$(arg standalone)">
+      <xacro:property name="xhand_mesh_prefix" value="../xhand_description" scope="global" />
+      <xacro:property name="xhand_include_prefix" value="../../../xhand_description" scope="global" />
+    </xacro:if>
   </xacro:if>
 
   <xacro:include filename="openarm_robot.xacro"/>
@@ -22,8 +42,6 @@
   <xacro:arg name="arm_type" default="v10" />
 
   <xacro:arg name="body_type" default="v10" />
-
-  <xacro:arg name="ee_type" default="none" />
 
   <xacro:arg name="has_head" default="true" />
 
